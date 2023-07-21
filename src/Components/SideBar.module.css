@@ -1,0 +1,14 @@
+.sidebar {
+  flex: 0.8;
+  /* background-color: yellow; */
+  padding-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+}

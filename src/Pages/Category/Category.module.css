@@ -1,0 +1,7 @@
+.container {
+  height: calc(100vh - 5rem);
+  margin: 2.5rem;
+  padding: 3rem;
+
+  display: flex;
+}

@@ -1,0 +1,34 @@
+.categoryItem {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-align: center;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.categoryItem img {
+  width: 60%;
+}
+
+.categoryItem > div {
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.6rem;
+  background-color: rgba(0, 0, 0, 0.61);
+  color: white;
+}
+
+.categoryItem h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.categoryItem p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.658);
+}

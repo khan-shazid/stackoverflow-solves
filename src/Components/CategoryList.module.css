@@ -1,0 +1,14 @@
+.categoryList {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  padding: 0 3rem 3rem 3rem;
+  z-index: 1;
+}
+
+.categoryList ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
