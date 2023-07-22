@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Dog from "./Dog"
+import { useState, useEffect, useRef } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function Game () {
+  const [dogs, setDogs] = useState([]);
+  const [picked, setPicked] = useState(false);
+  const [fave, setFave] = useState('');
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch('https://dog.ceo/api/breeds/image/random/10')
+      .then(response => response.json())
+      .then(data => setDogs(data.message));
+  }, []);
+
+  useEffect(() => {
+    setImages([dogs[0], dogs[1]]);
+  }, [dogs]);
+
+  useEffect(() => {
+    setImages([dogs[1], dogs[2]]);
+  }, [picked]);
+
+  if (images) {
+    return (
+      <>
+        <div>
+          <Dog
+            image={images[0]}
+            setFave={setFave}
+            picked={picked}
+            setPicked={setPicked}
+          />
+          <Dog
+            image={images[1]}
+            setFave={setFave}
+            picked={picked}
+            setPicked={setPicked}
+          />
+        </div>  
+      </>
+    )
+  }
 }
 
-export default App;
+export default Game
